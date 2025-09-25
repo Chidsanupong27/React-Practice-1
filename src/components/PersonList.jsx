@@ -1,4 +1,5 @@
 import { useState } from "react";
+import boy from "../assets/boy.svg";
 
 function PersonList() {
   const [data, setData] = useState([
