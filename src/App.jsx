@@ -6,7 +6,9 @@ function App() {
   return (
     <div>
       <Header />
-      <PersonList/>
+      <main>
+          <PersonList/>
+      </main>
       
       
     </div>
