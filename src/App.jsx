@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "./components/Header";
 import PersonList from "./components/PersonList";
 import "./App.css";
+import AddForm from "./components/AddForm";
 
 function App() {
   const [data, setData] = useState([
@@ -21,6 +22,7 @@ function App() {
       <Header title="แอพประชากร " />
 
       <main>
+        <AddForm data={data} setData={setData}/>
         <PersonList data={data} deleteUser={deleteUser}/>
       </main>
     </div>
