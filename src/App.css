@@ -8,3 +8,15 @@ main {
   margin: auto;
   padding: 10px;
 }
+
+.light{
+  background: aliceblue;
+  color: black;
+  transition: all 0.5s;
+}
+
+.dark{
+  background: #15202b;
+  color: aliceblue;
+  transition: all 0.5s;
+}

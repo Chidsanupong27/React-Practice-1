@@ -12,7 +12,7 @@ const User = ({item,deleteUser}) => {
         }}
       >
         <img src={item.gender == "male" ? boy : girl} width={50} height={50} />
-        <p style={{ color: "black", fontSize: "20px" }}>{item.name} </p>
+        <p>{item.name} </p>
         <div className="control">
           <button onClick={()=>deleteUser(item.id)}>ลบ</button>
         </div>

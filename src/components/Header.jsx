@@ -1,11 +1,23 @@
 import "./Header.css";
-function Header(props) {
+import { IoSunnySharp } from "react-icons/io5";
+import { IoSunnyOutline } from "react-icons/io5";
+const Header = ({title,theme,setTheme}) => {
 
-  const {title} = props
+  function toggleTheme() {
+    if(theme==="light") {
+      setTheme("dark")
+    }else{
+      setTheme("light")
+    }
+  }
+  
   return (
     <nav>
       <h1>{title}</h1>
-      <button>Light/Dark</button> 
+      <span onClick={toggleTheme}>
+          {theme === "light" ? <IoSunnySharp size={35}/> : <IoSunnyOutline size={35}/>}
+      </span>
+      
     </nav>
   );
 }

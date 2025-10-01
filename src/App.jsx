@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect} from "react";
 import Header from "./components/Header";
 import PersonList from "./components/PersonList";
 import "./App.css";
@@ -12,19 +12,30 @@ function App() {
     { id: 4, name: "ploy", gender: "female" },
   ]);
 
+
+  const [theme,setTheme] = useState(localStorage.getItem("mode") || "dark" )
+
   function deleteUser(id) {
     // ส่งเลข 3 ถ้าต้องการอยากจะลบ id 3 ออกจาก state data
     const result = data.filter((user) => user.id !== id); //new array 
     setData(result);
   }
+
+
+  useEffect(()=> {
+    localStorage.setItem("mode",theme)
+  },[theme])
+
   return (
+    <div className={theme}>
     <div className="App">
-      <Header title="แอพประชากร " />
+      <Header title="แอพประชากร" theme={theme} setTheme={setTheme}/>
 
       <main>
         <AddForm data={data} setData={setData}/>
         <PersonList data={data} deleteUser={deleteUser}/>
       </main>
+    </div>
     </div>
   );
 }

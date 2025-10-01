@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./PersonList.css";
 import User from "./User";
+import { FaRegEye } from "react-icons/fa";
+import { FaRegEyeSlash } from "react-icons/fa";
 
 function PersonList({data,deleteUser}) {
   const [show, setShow] = useState(true);
@@ -12,7 +14,7 @@ function PersonList({data,deleteUser}) {
     <div className="container">
       <div className="header">
         <h2 style={myStyle}>จำนวนประชากร {data.length} คน </h2>
-        <button onClick={() => setShow(!show)}>{show ? "ซ่อน" : "แสดง"}</button>
+        <span onClick={() => setShow(!show)}>{show ? <FaRegEye size={30}/> : <FaRegEyeSlash size={30}/>}</span>
       </div>
       <ul>
         {show &&
