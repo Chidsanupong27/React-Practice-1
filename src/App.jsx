@@ -15,6 +15,15 @@ function App() {
 
   const [theme, setTheme] = useState(localStorage.getItem("mode") || "dark");
 
+
+
+  // const TopFunction = () => {
+  //   const [source , setSource] = useState("Top test")
+  // }
+
+  // console.log(TopFunction)
+
+
   function deleteUser(id) {
     // ส่งเลข 3 ถ้าต้องการอยากจะลบ id 3 ออกจาก state data
     const result = data.filter((user) => user.id !== id); //new array
